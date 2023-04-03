@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Restaurant',
 ]
 
 MIDDLEWARE = [
@@ -57,10 +58,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'littleLemonCapstone.urls'
 
+# include templates dir in DIRS
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
