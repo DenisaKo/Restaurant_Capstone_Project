@@ -26,7 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Initialise environment variables
 env = environ.Env()
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
-SECRET_KEY = env('SECRET_KEY')
+# SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -86,9 +87,14 @@ WSGI_APPLICATION = 'littleLemonCapstone.wsgi.application'
 
 DATABASES = {  
     'default': {  
-        'ENGINE': 'django.db.backends.mysql',     
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': 'localhost',  
+        'PORT': '3306',    
         'OPTIONS': {  
-            'read_default_file': os.path.join(BASE_DIR, "my.cnf"), 
+            # 'read_default_file': os.path.join(BASE_DIR, "my.cnf"), 
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         }  
     }  
